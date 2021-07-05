@@ -13,6 +13,9 @@
 <% for (const js in htmlWebpackPlugin.files.js) { %>
 <script inline type="text/javascript" src="<%= htmlWebpackPlugin.files.js[js] %>"></script>
 <% } %>
-window.parent && window.parent.postMessage({type : 'KODEVAL', action: 'containerLoaded'},'*');
+<script type="text/javascript">
+    window.parent && window.parent.postMessage({type : 'KODEVAL', action: 'containerLoaded'},'*');
+    console.log("Initialized terminal.")
+</script>
 </body>
 </html>
